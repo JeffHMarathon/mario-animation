@@ -1,0 +1,129 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+.sky{
+  height: 40%;
+  background: skyblue;
+}
+
+.grass{
+  height: 30%;
+  background: seagreen;
+}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+
+.mario{
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  /* animation-name: drivemario;
+  animation-duration: 7.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; */
+  animation: drivemario 3s both infinite linear,
+              jump 0.3s 1.2s ease;
+  
+  /* animation-delay: 2s; */
+}
+
+.luigi{
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  animation-name: driveluigi;
+  animation-duration: 7s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* animation-delay: 2.1s; */
+}
+
+.cloud{
+  position: absolute;
+
+}
+.cloud:nth-child(1){
+  width:200px;
+  top: 120px;
+  opacity: 0.5;
+  /* transform: translateX(100vw); */
+  animation: movecloud 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+  width:300px;
+  top: 0px;
+  animation: movecloud 50s linear infinite reverse;
+  animation: movecloud 50s linear infinite;
+}
+
+/* .cloudslow{
+  position: absolute;
+  transform: translateY(180px);
+  top: 180px; */
+
+  /* transform: translateX(100vw); */
+  /* animation-name: movecloudslow;
+  animation-duration: 8s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite; */
+  /* animation-direction: alternate; */
+/* } */
+
+/*// KEYFRAMES //*/
+
+@keyframes drivemario{
+  from{transform: translateX(-200px)}
+  to{transform: translateX(100vw)}
+}
+
+@keyframes jump{
+  0%{ top: -40px}
+  50%{ top: -100px}
+  100%{ top: -40px}
+}
+
+@keyframes driveluigi{
+  from{transform: translateX(-200px)}
+  to{transform: translateX(100vw)}
+}
+
+@keyframes movecloud{
+  from{left: -300px}
+  to{left: 100%}
+}
+
+/* @keyframes movecloudslow{
+  from{transform: translateX(-300px)}
+  to{transform: translateX(100vw)}
+} */
